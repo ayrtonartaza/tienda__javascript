@@ -1,0 +1,163 @@
+$primary--color:#181916;
+$name--product--color: #464040;
+$price--color:#31430C;
+body{
+    background-color: #E5E9D3;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+.container{
+    margin:0px auto;
+}
+
+@font-face {
+    font-family: 'OCR A Extended';
+    src: url('../OCRAExtended.woff2') format('woff2'),
+    url('../OCRAExtended.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+header{
+    height: 60px;
+    max-width: 100%;
+    background-color: #FEFFFB;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        font-family: OCR A Extended;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 25px;
+        text-decoration: none;
+        color: #000000;
+    }
+    .cart{
+        height: 32px;
+        width: 32px;
+        background: url(../img/cart.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        position: relative;
+       
+            .cantidadcart{
+                font-family: 'Noto Sans JP', sans-serif;
+                font-weight: 900;
+                font-size: 10px;
+                position: absolute;
+                top: 8px;
+                left: 12px;
+            }
+    }
+
+    
+    .circle{
+        width: 8px;
+        height: 8px;
+        background-color:white;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 14px;
+        z-index: -9000;
+    }
+    
+}
+main{
+    background: url(../img/fondo__mobile.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    height: 100vh;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    #hero__section{
+        margin-top: 60px;
+    }
+    h2{
+        font-weight: 500;
+        font-size: 2rem;
+        color: #FDFFF0;
+        display: flex;
+        align-self: flex-start;
+        margin-bottom: 14px;
+    }
+    p{
+        font-weight: 500;
+        font-size: .9rem;
+        line-height: 20px;
+        color: #D4DCB9;
+        font-weight: 400;
+        width: 271px;
+        margin-bottom: 20px;
+    }
+    .button{
+        background-color: #0F1201;
+        color: #EAECE3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 154px;
+        height: 50px;
+        border-radius:2px;
+        border: none;
+        text-decoration: none;
+        font-family: Noto Sans JP;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    
+}
+
+
+/* animaciones */
+.circleanimate{
+    width: 8px;
+    height: 8px;
+    background-color: $primary--color;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    animation-name: circlekeyframe;
+    animation-duration: .6s;
+    transition-timing-function: ease-in-out;
+    z-index: -100;
+}
+@keyframes circlekeyframe {
+    0% { top: 6px; z-index: 100; }
+    50%{ top: -20px; z-index: 100}
+    100% { top: 8px; z-index: -100}
+  }
+
+  .cartañadido{
+    height: 32px;
+    width: 32px;
+    background: url(../img/cart__lleno.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: relative;
+    transition-delay: .5s;
+    z-index: 1;
+}
+.cantidadcart{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 10px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+

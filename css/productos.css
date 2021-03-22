@@ -1,0 +1,453 @@
+@charset "UTF-8";
+body {
+  background-color: #E5E9D3;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  margin: 0px auto;
+}
+
+@font-face {
+  font-family: "OCR A Extended";
+  src: url("../OCRAExtended.woff2") format("woff2"), url("../OCRAExtended.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+header {
+  height: 60px;
+  max-width: 100%;
+  background-color: #FEFFFB;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  font-family: OCR A Extended;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 25px;
+  text-decoration: none;
+  color: #000000;
+}
+header .cart {
+  height: 32px;
+  width: 32px;
+  background: url(../img/cart.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: relative;
+}
+header .cart .cantidadcart {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 900;
+  font-size: 10px;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+header .circle {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  z-index: -9000;
+}
+
+main {
+  background: url(../img/fondo__mobile.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  height: 100vh;
+  font-family: "Noto Sans JP", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+main #hero__section {
+  margin-top: 60px;
+}
+main h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  color: #FDFFF0;
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: 14px;
+}
+main p {
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 20px;
+  color: #D4DCB9;
+  font-weight: 400;
+  width: 271px;
+  margin-bottom: 20px;
+}
+main .button {
+  background-color: #0F1201;
+  color: #EAECE3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 154px;
+  height: 50px;
+  border-radius: 2px;
+  border: none;
+  text-decoration: none;
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* animaciones */
+.circleanimate {
+  width: 8px;
+  height: 8px;
+  background-color: #181916;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 14px;
+  animation-name: circlekeyframe;
+  animation-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  z-index: -100;
+}
+
+@keyframes circlekeyframe {
+  0% {
+    top: 6px;
+    z-index: 100;
+  }
+  50% {
+    top: -20px;
+    z-index: 100;
+  }
+  100% {
+    top: 8px;
+    z-index: -100;
+  }
+}
+.cartañadido {
+  height: 32px;
+  width: 32px;
+  background: url(../img/cart__lleno.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: relative;
+  transition-delay: 0.5s;
+  z-index: 1;
+}
+
+.cantidadcart {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 900;
+  font-size: 10px;
+  position: absolute;
+  top: 8px;
+  left: 13px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+#container__cards {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 12px;
+  margin: 20px 20px;
+  justify-content: center;
+}
+
+.card {
+  height: 200px;
+  min-width: 100%;
+  background: #FEFFFB;
+  border-radius: 2px;
+  display: flex;
+  flex-flow: column;
+  padding: 0px 0px;
+  justify-content: center;
+  position: relative;
+}
+.card:hover {
+  filter: drop-shadow(0px 2px 4px rgba(20, 16, 16, 0.25));
+}
+.card img {
+  position: absolute;
+  top: 0;
+  margin-top: 0px;
+  max-width: 100%;
+  width: 100%;
+  height: 48%;
+  object-fit: cover;
+  border-radius: 2px 2px 0px 0px;
+}
+.card .infocard {
+  padding: 0px 12px;
+}
+.card .infocard span {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 29px;
+  color: #31430C;
+  position: absolute;
+  top: 98px;
+}
+.card .infocard h3 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #464040;
+  margin-top: 2px;
+  position: absolute;
+  top: 121px;
+}
+.card button {
+  outline: none;
+  color: #181916;
+  border: solid 1.34px #181916;
+  border-radius: 2px;
+  background-color: #FEFFFB;
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 105px;
+  min-height: 24px;
+  position: absolute;
+  bottom: 10px;
+}
+
+/*lista productos añadido en carrito*/
+.carritomain {
+  border-top: 4px #181916 solid;
+  width: 80%;
+  height: 75vh;
+  max-height: fit-content;
+  max-width: 300px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 72px;
+  background-color: white;
+  border-radius: 2px;
+  pointer-events: none;
+  padding: 20px 22px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.carritoabierto {
+  pointer-events: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/* carrito vacio */
+.carritovacio {
+  margin: auto;
+  width: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: center;
+}
+.carritovacio h2 {
+  margin-bottom: 32px;
+}
+.carritovacio span {
+  margin-top: 20px;
+  width: 230px;
+  text-align: center;
+  line-height: 20px;
+}
+.carritovacio .button {
+  background-color: #181916;
+  color: white;
+  width: 174px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 2px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+/* card productos añadidos */
+.cardcarrito {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  height: fit-content;
+  margin-bottom: 16px;
+}
+
+.img_card__carrito {
+  width: 78px;
+  height: 78px;
+  border-radius: 2px;
+}
+
+.infocard_carrito {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-left: 12px;
+}
+
+.totalproducto {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 29px;
+  color: #31430C;
+  position: absolute;
+  top: 0px;
+  margin-top: 24px;
+}
+
+.nombre__carrito {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #464040;
+  position: absolute;
+  top: 0px;
+  margin-top: 0px;
+  width: 140px;
+}
+
+/* sumar y restar cantidad y eliminar producto*/
+.cantidad__botones {
+  position: absolute;
+  left: 90px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  width: 70px;
+  justify-content: space-between;
+}
+
+.eliminarproducto {
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+}
+
+/* total carrito */
+.totalcarritocontainer {
+  position: absolute;
+  width: 87%;
+  bottom: 100px;
+  font-family: Noto Sans JP;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.totalcarritocontainer span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #464040;
+}
+.totalcarritocontainer .totalcarrito {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 29px;
+  color: #31430C;
+}
+
+/* button comprar carrito */
+.button__comprar {
+  width: 90%;
+  max-width: 300px;
+  height: 50px;
+  max-height: 100px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: none;
+  border-radius: 2px;
+  background-color: #181916;
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* animacion boton add to cart cuando se clickea */
+@keyframes animacionbutton {
+  0% {
+    background-color: #181916;
+  }
+  0% {
+    background-color: #181916;
+  }
+  100% {
+    background-color: #FEFFFB;
+  }
+}
+.buttonanimado {
+  animation-name: animacionbutton;
+  animation-duration: 1s;
+  outline: none;
+  color: #181916;
+  border: solid 1.34px #181916;
+  border-radius: 2px;
+  background-color: #FEFFFB;
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 105px;
+  min-height: 24px;
+  position: absolute;
+  bottom: 10px;
+}
+
+/*# sourceMappingURL=productos.css.map */
