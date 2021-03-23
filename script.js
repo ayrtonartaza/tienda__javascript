@@ -30,6 +30,7 @@ datos.forEach(item =>{
     `;
 })
 
+/* funcion agregar al carrito */
 container.addEventListener('click',agregarAlCarrito)
 function agregarAlCarrito(e){
     const button =e.target;
@@ -53,16 +54,16 @@ function agregarAlCarrito(e){
                }
                else{
                     return producto
+                   
                }
             })
             
     }
     else{
         carrito = [...carrito,producto]
-        
+       
     }
         
-    
     
     escribirDatosCarrito(carrito)
     animacionButton(button)

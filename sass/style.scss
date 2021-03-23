@@ -26,6 +26,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
     a{
         font-family: OCR A Extended;
         font-style: normal;
@@ -68,18 +70,21 @@ header{
     
 }
 main{
-    background: url(../img/fondo__mobile.png);
+    background: url(../img/fondo__mobile.png) #6d811e;
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
+    
     height: 100vh;
     font-family: 'Noto Sans JP', sans-serif;
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
+    
     #hero__section{
-        margin-top: 60px;
+        margin-top: 80px;
+        margin-left: 32px;
     }
     h2{
         font-weight: 500;
@@ -159,5 +164,87 @@ main{
     color: white;
     text-align: center;
     z-index: 1;
+}
+
+
+@media screen and (min-width:400px){
+    main{
+        background: url(../img/fondo__desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        #hero__section{
+            margin-top: 60px;
+            margin-left: 10%;
+        }
+    }
+}
+@media screen and (min-width:600px){
+    main{
+        background: url(../img/fondo__desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        #hero__section{
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+        h2{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 1.6rem;
+            line-height: 2rem;
+            width: 500px;
+        }
+        .button{
+            background-color: #0F1201;
+            color: #EAECE3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 154+50px;
+            height: 50+20px;
+            border-radius:2px;
+            border: none;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin-top: 40px;
+        }
+    }
+}
+@media screen and (min-width:1000px){
+    main{
+        background: url(../img/fondo__desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        #hero__section{
+            margin-top: 2%;
+            margin-left: 10%;
+        }
+        h2{
+            font-size: 4rem;
+        }
+        p{
+            font-size: 1.6rem;
+            line-height: 2rem;
+            width: 500px;
+        }
+        .button{
+            background-color: #0F1201;
+            color: #EAECE3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 240px;
+            height: 60px;
+            border-radius:2px;
+            border: none;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin-top: 40px;
+        }
+    }
 }
 

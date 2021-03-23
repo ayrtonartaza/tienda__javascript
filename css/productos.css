@@ -24,6 +24,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 header a {
   font-family: OCR A Extended;
@@ -63,7 +65,7 @@ header .circle {
 }
 
 main {
-  background: url(../img/fondo__mobile.png);
+  background: url(../img/fondo__mobile.png) #6d811e;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: contain;
@@ -75,7 +77,8 @@ main {
   align-items: center;
 }
 main #hero__section {
-  margin-top: 60px;
+  margin-top: 80px;
+  margin-left: 32px;
 }
 main h2 {
   font-weight: 500;
@@ -162,6 +165,94 @@ main .button {
   color: white;
   text-align: center;
   z-index: 1;
+}
+
+@media screen and (min-width: 400px) {
+  main {
+    background: url(../img/fondo__desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+  main #hero__section {
+    margin-top: 60px;
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 600px) {
+  main {
+    background: url(../img/fondo__desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+  main #hero__section {
+    margin-top: 10%;
+    margin-left: 10%;
+  }
+  main h2 {
+    font-size: 3rem;
+  }
+  main p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    width: 500px;
+  }
+  main .button {
+    background-color: #0F1201;
+    color: #EAECE3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 204px;
+    height: 70px;
+    border-radius: 2px;
+    border: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  main {
+    background: url(../img/fondo__desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+  main #hero__section {
+    margin-top: 2%;
+    margin-left: 10%;
+  }
+  main h2 {
+    font-size: 4rem;
+  }
+  main p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    width: 500px;
+  }
+  main .button {
+    background-color: #0F1201;
+    color: #EAECE3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 60px;
+    border-radius: 2px;
+    border: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
+}
+.title__productos {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #181916;
+  margin-left: 14px;
 }
 
 #container__cards {
@@ -448,6 +539,85 @@ main .button {
   min-height: 24px;
   position: absolute;
   bottom: 10px;
+}
+
+@media screen and (min-width: 400px) {
+  #container__cards {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 12px;
+    margin: 20px 0px auto 14px;
+    justify-content: center;
+    width: fit-content;
+  }
+
+  .card {
+    height: 290px;
+    max-width: 300px;
+    background: #FEFFFB;
+    border-radius: 2px;
+    display: flex;
+    flex-flow: column;
+    padding: 0px 0px;
+    justify-content: center;
+    position: relative;
+  }
+  .card:hover {
+    filter: drop-shadow(0px 2px 4px rgba(20, 16, 16, 0.25));
+  }
+  .card img {
+    position: absolute;
+    top: 0;
+    margin-top: 0px;
+    max-width: 100%;
+    width: 100%;
+    height: 48%;
+    object-fit: cover;
+    border-radius: 2px 2px 0px 0px;
+  }
+  .card .infocard {
+    padding: 0px 12px;
+  }
+  .card .infocard span {
+    font-family: "Noto Sans JP", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 29px;
+    color: #31430C;
+    position: absolute;
+    top: 200px;
+  }
+  .card .infocard h3 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #464040;
+    margin-top: 2px;
+    position: absolute;
+    top: 155px;
+  }
+  .card button {
+    outline: none;
+    color: #181916;
+    border: solid 1.34px #181916;
+    border-radius: 2px;
+    background-color: #FEFFFB;
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 145px;
+    min-height: 36px;
+    position: absolute;
+    bottom: 14px;
+  }
 }
 
 /*# sourceMappingURL=productos.css.map */
