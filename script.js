@@ -14,7 +14,20 @@ const datos=[
         nombre:'Zapatilla Urbana Cuero Descarne Skate Gris',
         precio:50,
         id:2
+    },
+    gorro={
+        img:'img/gorro__skate.jpg',
+        nombre:'Gorra Hombre Racks Mujer Visera Skate Surf',
+        precio:60,
+        id:3
+    },
+    ejemplo={
+        img:'img/zapas__blue.jpg',
+        nombre:'ejemplo',
+        precio:300,
+        id:4
     }
+
 ]
 
 
@@ -131,26 +144,31 @@ function escribirDatosCarrito(carrito){
     carritomain.innerHTML='';
    for (let i = 0; i < carrito.length; i++) {
        carritomain.innerHTML+=`
-       <div class="cardcarrito container">
-            <img src="${carrito[i].imagen}" class="img_card__carrito" alt="">
-            <div class="infocard_carrito">
-                <span class="totalproducto">$${carrito[i].precio * carrito[i].cantidad}</span>
-                <h3 class="nombre__carrito">${carrito[i].nombre}</h3>
+       
+            <div class="cardcarrito container">
+                    <img src="${carrito[i].imagen}" class="img_card__carrito" alt="">
+                    <div class="infocard_carrito">
+                        <span class="totalproducto">$${carrito[i].precio * carrito[i].cantidad}</span>
+                        <h3 class="nombre__carrito">${carrito[i].nombre}</h3>
+                    </div>
+                    <div class="cantidad__botones">
+                        <img class="restarcantidad" data-id='${carrito[i].nombre}' src="img/restar__cantidad.svg" alt="restarcantidadproducto">
+                        <span class="cantidadproducto">${carrito[i].cantidad}</span>
+                        <img class="sumarcantidad" data-id='${carrito[i].nombre}' src="./img/sumar__cantidad.svg" alt="sumarcantidadproducto">
+                    </div>
+                    <img class="eliminarproducto" id="${carrito[i].nombre}" src="img/icon__delete.svg" alt="eliminarproductodelcarrito">
             </div>
-            <div class="cantidad__botones">
-                <img class="restarcantidad" data-id='${carrito[i].nombre}' src="img/restar__cantidad.svg" alt="restarcantidadproducto">
-                <span class="cantidadproducto">${carrito[i].cantidad}</span>
-                <img class="sumarcantidad" data-id='${carrito[i].nombre}' src="./img/sumar__cantidad.svg" alt="sumarcantidadproducto">
-            </div>
-            <img class="eliminarproducto" id="${carrito[i].nombre}" src="img/icon__delete.svg" alt="eliminarproductodelcarrito">
-        </div>
-        <div class="totalcarritocontainer">
-        <span>Total</span>
-        <span class='totalcarrito'>$${calcularTotalCarrito(carrito)}</span>
-        </div>
-        <button class='button__comprar' >Continuar compra</button>
+           
+            
+        
        `
    }
+   carritomain.innerHTML+=`
+   <div class="totalcarritocontainer">
+   <span>Total</span>
+   <span class='totalcarrito'>$${calcularTotalCarrito(carrito)}</span>
+   </div>
+   <button class='button__comprar' >Continuar compra</button>`;
 }
 
 

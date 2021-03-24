@@ -6,7 +6,6 @@ body{
     background-color: #E5E9D3;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    
 }
 
 .container{
@@ -75,7 +74,7 @@ main{
     background: url(../img/fondo__mobile.png) #6d811e;
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: contain;
+    background-size: cover;
     
     height: 100vh;
     font-family: 'Noto Sans JP', sans-serif;

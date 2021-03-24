@@ -70,7 +70,7 @@ main {
   background: url(../img/fondo__mobile.png) #6d811e;
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: contain;
+  background-size: cover;
   height: 100vh;
   font-family: "Noto Sans JP", sans-serif;
   width: 100%;
@@ -259,7 +259,7 @@ main .button {
 
 #container__cards {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin: 20px 20px;
   justify-content: center;
@@ -368,8 +368,7 @@ main .button {
 .carritomain {
   border-top: 4px #181916 solid;
   width: 80%;
-  height: 75vh;
-  max-height: fit-content;
+  height: fit-content;
   max-width: 300px;
   position: absolute;
   margin: 0 auto;
@@ -383,6 +382,7 @@ main .button {
   opacity: 0;
   transition: 0.3s;
   z-index: 10000000000;
+  border: solid 1px blue;
 }
 
 .carritoabierto {
@@ -528,7 +528,7 @@ main .button {
 .totalcarritocontainer {
   position: absolute;
   width: 87%;
-  bottom: 100px;
+  bottom: 70px;
   font-family: Noto Sans JP;
   display: flex;
   flex-flow: row nowrap;
@@ -560,15 +560,11 @@ main .button {
 
 /* button comprar carrito */
 .button__comprar {
-  width: 90%;
+  width: 100%;
   max-width: 300px;
   height: 50px;
   max-height: 100px;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin: 70px auto -10px auto;
   border: none;
   border-radius: 2px;
   background-color: #181916;
@@ -710,7 +706,7 @@ main .button {
 @media screen and (min-width: 600px) {
   #container__cards {
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 200px 200px 200px;
     gap: 12px;
     margin: 20px 0px auto 14px;
     justify-content: center;
