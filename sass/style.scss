@@ -1,11 +1,14 @@
 $primary--color:#181916;
 $name--product--color: #464040;
 $price--color:#31430C;
+
 body{
     background-color: #E5E9D3;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+    
 }
+
 .container{
     margin:0px auto;
 }
@@ -45,7 +48,7 @@ header{
         background-size: contain;
         background-position: center center;
         position: relative;
-       
+        cursor: pointer;
             .cantidadcart{
                 font-family: 'Noto Sans JP', sans-serif;
                 font-weight: 900;

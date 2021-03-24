@@ -44,6 +44,7 @@ header .cart {
   background-size: contain;
   background-position: center center;
   position: relative;
+  cursor: pointer;
 }
 header .cart .cantidadcart {
   font-family: "Noto Sans JP", sans-serif;
@@ -273,9 +274,12 @@ main .button {
   padding: 0px 0px;
   justify-content: center;
   position: relative;
+  transition: 0.3s ease;
 }
 .card:hover {
   filter: drop-shadow(0px 2px 4px rgba(20, 16, 16, 0.25));
+  margin-top: -1px;
+  transition: 0.2s ease;
 }
 .card img {
   position: absolute;
@@ -290,15 +294,25 @@ main .button {
 .card .infocard {
   padding: 0px 12px;
 }
-.card .infocard span {
+.card .infocard .containerprecio {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: absolute;
+  top: 116px;
+  height: fit-content;
+}
+.card .infocard .containerprecio .preciocard {
   font-family: "Noto Sans JP", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 1rem;
   line-height: 29px;
   color: #31430C;
-  position: absolute;
-  top: 98px;
+}
+.card .infocard .containerprecio .preciocard::selection {
+  background-color: #31430C;
+  color: white;
 }
 .card .infocard h3 {
   font-family: "Noto Sans JP", sans-serif;
@@ -309,7 +323,12 @@ main .button {
   color: #464040;
   margin-top: 2px;
   position: absolute;
-  top: 121px;
+  top: 100px;
+  padding-right: 12px;
+}
+.card .infocard h3::selection {
+  background-color: #31430C;
+  color: white;
 }
 .card button {
   outline: none;
@@ -329,6 +348,18 @@ main .button {
   min-height: 24px;
   position: absolute;
   bottom: 10px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.card button:hover {
+  background-color: #181916;
+  color: white;
+  transition: 0.2s ease;
+}
+
+/* filtro blur al abrir el carrito */
+.filtro > *:not(header, .carritomain) {
+  filter: blur(2px);
 }
 
 /*lista productos añadido en carrito*/
@@ -349,6 +380,7 @@ main .button {
   padding: 20px 22px;
   opacity: 0;
   transition: 0.3s;
+  z-index: 10000000000;
 }
 
 .carritoabierto {
@@ -544,7 +576,7 @@ main .button {
 @media screen and (min-width: 400px) {
   #container__cards {
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 185px 185px;
     gap: 12px;
     margin: 20px 0px auto 14px;
     justify-content: center;
@@ -578,15 +610,25 @@ main .button {
   .card .infocard {
     padding: 0px 12px;
   }
-  .card .infocard span {
+  .card .infocard .containerprecio {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: absolute;
+    top: 116px;
+    height: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    position: absolute;
+    top: 180px;
+  }
+  .card .infocard .containerprecio .preciocard {
     font-family: "Noto Sans JP", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 1.3rem;
     line-height: 29px;
     color: #31430C;
-    position: absolute;
-    top: 200px;
   }
   .card .infocard h3 {
     font-family: "Noto Sans JP", sans-serif;
@@ -597,7 +639,7 @@ main .button {
     color: #464040;
     margin-top: 2px;
     position: absolute;
-    top: 155px;
+    top: 150px;
   }
   .card button {
     outline: none;
@@ -617,6 +659,20 @@ main .button {
     min-height: 36px;
     position: absolute;
     bottom: 14px;
+  }
+}
+@media screen and (min-width: 600px) {
+  #container__cards {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 12px;
+    margin: 20px 0px auto 14px;
+    justify-content: center;
+    width: fit-content;
+  }
+
+  .carritomain {
+    top: 60px;
   }
 }
 

@@ -44,6 +44,7 @@ header .cart {
   background-size: contain;
   background-position: center center;
   position: relative;
+  cursor: pointer;
 }
 header .cart .cantidadcart {
   font-family: "Noto Sans JP", sans-serif;

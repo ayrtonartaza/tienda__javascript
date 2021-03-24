@@ -13,7 +13,6 @@
     gap: 12px;
     margin: 20px 20px;
     justify-content: center; 
-
 }
 .card{
     height: 200px;
@@ -22,13 +21,16 @@
     border-radius: 2px;
     display: flex;
     flex-flow: column;
-    padding: 0px  0px;
+    padding: 0px 0px;
     justify-content: center;
     position: relative;
-    
+    transition: .3s ease;
     &:hover{
         filter: drop-shadow(0px 2px 4px rgba(20, 16, 16, 0.25));
+        margin-top:-1px;
+        transition: .2s ease;
     }
+    
     img{
         position: absolute;
         top: 0;
@@ -41,16 +43,29 @@
     }
         .infocard{
             padding: 0px 12px;
-            span{
-                font-family: 'Noto Sans JP', sans-serif;
-                font-style: normal;
-                font-weight: 700;
-                font-size: .7rem;
-                line-height: 29px;
-                color: $price--color;
+            .containerprecio{
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
                 position: absolute;
-                top: 98px;
+                top: 116px;
+                height: fit-content;
+                
+                .preciocard{
+                    font-family: 'Noto Sans JP', sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    line-height: 29px;
+                    color: $price--color;
+                   
+                    &::selection{
+                        background-color: $price--color;
+                        color: white;
+                    }
+                }
             }
+           
             h3{
                 font-family: 'Noto Sans JP', sans-serif;
                 font-style: normal;
@@ -60,7 +75,12 @@
                 color: $name--product--color;
                 margin-top: 2px;
                 position: absolute; 
-                top: 121px;
+                top: 100px;
+                padding-right: 12px;
+                &::selection{
+                    background-color: $price--color;
+                    color: white;
+                }
             }
         }
         button{
@@ -81,10 +101,20 @@
             min-height: 24px;
             position: absolute;
             bottom: 10px;
+            transition: .2s ease;
+            cursor: pointer;
+                &:hover{
+                background-color: $primary--color;
+                color: white;
+                transition: .2s ease;
+                }
         }
     
 }
-
+/* filtro blur al abrir el carrito */
+.filtro > *:not(header, .carritomain) {
+    filter: blur(2px);
+}
 /*lista productos añadido en carrito*/
 .carritomain{
     border-top: 4px $primary--color solid;
@@ -103,6 +133,7 @@
     padding: 20px 22px;
     opacity: 0;
     transition: .3s; 
+    z-index: 10000000000;
 }
 .carritoabierto{
     pointer-events: visible;
@@ -284,7 +315,7 @@
 @media screen and (min-width:400px){
     #container__cards{
         display: grid;
-        grid-template-columns: 200px 200px;
+        grid-template-columns: 185px 185px;
         gap: 12px;
         margin: 20px 0px auto 14px;
         justify-content: center; 
@@ -317,16 +348,28 @@
         }
             .infocard{
                 padding: 0px 12px;
-                span{
-                    font-family: 'Noto Sans JP', sans-serif;
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 1.3rem;
-                    line-height: 29px;
-                    color: $price--color;
+                .containerprecio{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
                     position: absolute;
-                    top: 200px;
+                    top: 116px;
+                    height: fit-content;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    position: absolute;
+                    top: 180px;
+                        .preciocard{
+                            font-family: 'Noto Sans JP', sans-serif;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 1.3rem;
+                            line-height: 29px;
+                            color: $price--color;
+                        
+                        }
                 }
+                
                 h3{
                     font-family: 'Noto Sans JP', sans-serif;
                     font-style: normal;
@@ -336,7 +379,7 @@
                     color: $name--product--color;
                     margin-top: 2px;
                     position: absolute; 
-                    top: 155px;
+                    top: 150px;
                 }
             }
             button{
@@ -362,3 +405,16 @@
     }
 }
 
+@media screen and (min-width:600px){
+    #container__cards{
+        display: grid;
+        grid-template-columns: 200px 200px;
+        gap: 12px;
+        margin: 20px 0px auto 14px;
+        justify-content: center; 
+        width: fit-content;
+    }
+    .carritomain{
+        top: 60px;
+    }
+}

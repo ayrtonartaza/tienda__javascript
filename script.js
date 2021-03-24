@@ -1,5 +1,6 @@
 const container = document.getElementById('container__cards');
 const carritovaciohtml = document.querySelector('.carritovacio');
+const body= document.querySelector('body');
 let carrito=[];
 const datos=[
     skate1={
@@ -22,7 +23,10 @@ datos.forEach(item =>{
     <div class="card container">
            <img src="${item.img}" class="img_card" alt="">
            <div class="infocard " >
-               <span class='precio'>${item.precio}</span>
+                <div class="containerprecio">
+                    <p class='preciocard'>$</p>
+                    <span class='precio preciocard'>${item.precio}</span>
+                </div>
                <h3 class='nombre'>${item.nombre}</h3>
                <button >Agregar al carrito</button>
            </div>
@@ -154,6 +158,7 @@ function escribirDatosCarrito(carrito){
 carritohtml.addEventListener('click',abrirCarrito);
 function abrirCarrito(){
     carritomain.classList.toggle('carritoabierto');
+    body.classList.toggle('filtro')
 }
 
 
@@ -196,6 +201,8 @@ function eliminarproducto(e){
             if(e.target.id == carrito[i].nombre){
                 carrito.splice(i,1);
                 escribirDatosCarrito(carrito)
+                iconcarrito.textContent=carrito.length;
+
             }
         
             
@@ -210,12 +217,14 @@ function bajarCantidadProducto(e){
        if(e.target.dataset.id == carrito[i].nombre && carrito[i].cantidad >0){
        carrito[i].cantidad--;
        escribirDatosCarrito(carrito);
+       
        } 
 
        if( carrito[i].cantidad ===0){
         carrito.splice(i,1);
         escribirDatosCarrito(carrito);
         escribirCarroVacio()
+        iconcarrito.textContent=carrito.length;
        }
        
    }
