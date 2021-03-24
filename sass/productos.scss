@@ -114,6 +114,7 @@
 /* filtro blur al abrir el carrito */
 .filtro > *:not(header, .carritomain) {
     filter: blur(2px);
+    pointer-events: none;
 }
 /*lista productos añadido en carrito*/
 .carritomain{
@@ -134,6 +135,7 @@
     opacity: 0;
     transition: .3s; 
     z-index: 10000000000;
+    
 }
 .carritoabierto{
     pointer-events: visible;
@@ -155,13 +157,20 @@
     text-align: center;
     h2{
         margin-bottom: 32px;
-       
+            &::selection{
+                background-color: $price--color;
+                color: white;
+            }
     }
     span{
         margin-top: 20px;
         width: 230px;
         text-align: center;
         line-height: 20px;
+            &::selection{
+                background-color: $price--color;
+                color: white;
+            }
     }
     .button{
         background-color: $primary--color;
@@ -186,52 +195,78 @@
     margin-bottom: 16px;
 }
 .img_card__carrito{
-    width: 78px;
-    height: 78px;
+    width: 86px;
+    height: 90px;
     border-radius: 2px;
 }
 .infocard_carrito{
     display: flex;
     flex-flow: column-reverse;
     margin-left: 12px;
-}
+    }
 .totalproducto{
     font-family: 'Noto Sans JP', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: .7rem;
+    font-size: .8rem;
     line-height: 29px;
     color: $price--color;
     position: absolute;
     top: 0px;
-    margin-top: 24px;
+    margin-top: 32px;
+    &::selection{
+        background-color: $price--color;
+        color: white;
+    }
 }
 .nombre__carrito{
     font-family: 'Noto Sans JP', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 18px;
     color: $name--product--color;
     position: absolute;
     top: 0px;
     margin-top: 0px;
-    width: 140px;
+    width: 200px;
+    &::selection{
+        background-color: $price--color;
+        color: white;
+    }
+}
+.cantidadproducto{
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: $price--color;
+    &::selection{
+        background-color: $price--color;
+        color: white;
+    }
 }
  /* sumar y restar cantidad y eliminar producto*/
  .cantidad__botones{
      position: absolute;
-     left: 90px;
+     left: 96px;
      bottom: 0px;
      display: flex;
      align-items: center;
-     width: 70px;
+     width: 90px;
      justify-content: space-between;
+
+        img{ /* botones sumar y eliminar */
+            height: 28px;
+            width: 28px;
+            cursor: pointer;
+        }
  }
  .eliminarproducto{
      position: absolute;
      right: 12px;
      bottom: 0;
+     height: 28px;
+     width: 28px;
+     cursor: pointer;
  }
 /* total carrito */
 .totalcarritocontainer{
@@ -243,13 +278,17 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-
+    
     span{
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
         color: $name--product--color;
+            &::selection{
+                background-color: $price--color;
+                color: white;
+            }
     }
     .totalcarrito{
         font-style: normal;
@@ -257,6 +296,10 @@
         font-size: 20px;
         line-height: 29px;
         color: $price--color;
+            &::selection{
+                background-color: $price--color;
+                color: white;
+            }
     }
 }
 /* button comprar carrito */
@@ -283,6 +326,7 @@
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
 }
 /* animacion boton add to cart cuando se clickea */
 @keyframes animacionbutton {
@@ -416,5 +460,7 @@
     }
     .carritomain{
         top: 60px;
+        /* left: auto;
+        right: 16px; */
     }
 }

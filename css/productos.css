@@ -46,13 +46,14 @@ header .cart {
   position: relative;
   cursor: pointer;
 }
-header .cart .cantidadcart {
+header .cantidadcart {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 900;
-  font-size: 10px;
+  font-size: 11px;
   position: absolute;
-  top: 8px;
-  left: 12px;
+  top: 7px;
+  left: 37%;
+  width: 11px;
 }
 header .circle {
   width: 8px;
@@ -360,6 +361,7 @@ main .button {
 /* filtro blur al abrir el carrito */
 .filtro > *:not(header, .carritomain) {
   filter: blur(2px);
+  pointer-events: none;
 }
 
 /*lista productos añadido en carrito*/
@@ -404,11 +406,19 @@ main .button {
 .carritovacio h2 {
   margin-bottom: 32px;
 }
+.carritovacio h2::selection {
+  background-color: #31430C;
+  color: white;
+}
 .carritovacio span {
   margin-top: 20px;
   width: 230px;
   text-align: center;
   line-height: 20px;
+}
+.carritovacio span::selection {
+  background-color: #31430C;
+  color: white;
 }
 .carritovacio .button {
   background-color: #181916;
@@ -434,8 +444,8 @@ main .button {
 }
 
 .img_card__carrito {
-  width: 78px;
-  height: 78px;
+  width: 86px;
+  height: 90px;
   border-radius: 2px;
 }
 
@@ -449,42 +459,69 @@ main .button {
   font-family: "Noto Sans JP", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 29px;
   color: #31430C;
   position: absolute;
   top: 0px;
-  margin-top: 24px;
+  margin-top: 32px;
+}
+.totalproducto::selection {
+  background-color: #31430C;
+  color: white;
 }
 
 .nombre__carrito {
   font-family: "Noto Sans JP", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 14px;
+  line-height: 18px;
   color: #464040;
   position: absolute;
   top: 0px;
   margin-top: 0px;
-  width: 140px;
+  width: 200px;
+}
+.nombre__carrito::selection {
+  background-color: #31430C;
+  color: white;
+}
+
+.cantidadproducto {
+  font-weight: 700;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #31430C;
+}
+.cantidadproducto::selection {
+  background-color: #31430C;
+  color: white;
 }
 
 /* sumar y restar cantidad y eliminar producto*/
 .cantidad__botones {
   position: absolute;
-  left: 90px;
+  left: 96px;
   bottom: 0px;
   display: flex;
   align-items: center;
-  width: 70px;
+  width: 90px;
   justify-content: space-between;
+}
+.cantidad__botones img {
+  /* botones sumar y eliminar */
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
 }
 
 .eliminarproducto {
   position: absolute;
   right: 12px;
   bottom: 0;
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
 }
 
 /* total carrito */
@@ -505,12 +542,20 @@ main .button {
   line-height: 20px;
   color: #464040;
 }
+.totalcarritocontainer span::selection {
+  background-color: #31430C;
+  color: white;
+}
 .totalcarritocontainer .totalcarrito {
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 29px;
   color: #31430C;
+}
+.totalcarritocontainer .totalcarrito::selection {
+  background-color: #31430C;
+  color: white;
 }
 
 /* button comprar carrito */
@@ -537,6 +582,7 @@ main .button {
   align-items: center;
   text-align: center;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 /* animacion boton add to cart cuando se clickea */
@@ -673,6 +719,8 @@ main .button {
 
   .carritomain {
     top: 60px;
+    /* left: auto;
+    right: 16px; */
   }
 }
 
