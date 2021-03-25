@@ -54,6 +54,7 @@ header .cantidadcart {
   top: 7px;
   left: 37%;
   width: 11px;
+  cursor: pointer;
 }
 header .circle {
   width: 8px;
@@ -714,8 +715,8 @@ main .button {
 
   .carritomain {
     top: 60px;
-    /* left: auto;
-    right: 16px; */
+    left: auto;
+    right: 16px;
   }
 }
 
