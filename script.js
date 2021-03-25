@@ -20,12 +20,6 @@ const datos=[
         nombre:'Gorra Hombre Racks Mujer Visera Skate Surf',
         precio:60,
         id:3
-    },
-    ejemplo={
-        img:'img/zapas__blue.jpg',
-        nombre:'ejemplo',
-        precio:300,
-        id:4
     }
 
 ]
