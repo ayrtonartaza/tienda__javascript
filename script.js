@@ -72,9 +72,7 @@ function agregarAlCarrito(e){
     }
     else{
         carrito = [...carrito,producto]
-       
     }
-        
     
     escribirDatosCarrito(carrito)
     animacionButton(button)
