@@ -26,7 +26,11 @@ header {
   justify-content: space-between;
   position: sticky;
   top: 0;
+<<<<<<< HEAD
   z-index: 1000;
+=======
+  z-index: 10000000;
+>>>>>>> localstorage
 }
 header a {
   font-family: OCR A Extended;
