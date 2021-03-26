@@ -1,7 +1,7 @@
 const container = document.getElementById('container__cards');
 const carritovaciohtml = document.querySelector('.carritovacio');
 const body= document.querySelector('body');
-let carrito=[];
+let carrito =[];
 const datos=[
     skate1={
         img:'img/imgskate.png',
@@ -44,6 +44,7 @@ datos.forEach(item =>{
 /* funcion agregar al carrito */
 container.addEventListener('click',agregarAlCarrito)
 function agregarAlCarrito(e){
+    
     const button =e.target;
     let nombre= button.parentElement.querySelector('.nombre').textContent;
     let precio= button.parentElement.querySelector('.precio').textContent;
@@ -55,26 +56,28 @@ function agregarAlCarrito(e){
         precio:parseInt(precio),
         cantidad:cantidad
     } 
+    
+    /* some es para array de objeto y map para un array comun */
+    const existe = carrito.some(i => i.nombre === producto.nombre);
 
     
-    if(carrito.some(item => item.nombre === producto.nombre)){
-           carrito.map( item =>{
-               if(item.nombre === producto.nombre){
-                    item.cantidad++;
-                    return item;
-               }
-               else{
-                    return producto
-                   
-               }
-            })
-            
+    if(existe){
+        /* si la condicion se cumple busca lo que se repite y le suma la cantidad */
+        carrito.forEach(i =>{
+            if(i.nombre === producto.nombre){
+                i.cantidad++;
+            }
+        })
+        /* carrito.map( i =>{
+            if(i.nombre === producto.nombre){
+                i.cantidad++;
+            }
+        }) */
     }
     else{
-        carrito = [...carrito,producto]
-       
+        carrito.push(producto)
     }
-        
+
     
     escribirDatosCarrito(carrito)
     animacionButton(button)
