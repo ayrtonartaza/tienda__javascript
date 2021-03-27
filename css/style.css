@@ -26,13 +26,10 @@ header {
   justify-content: space-between;
   position: sticky;
   top: 0;
-<<<<<<< HEAD
   z-index: 1000;
-=======
-  z-index: 10000000;
->>>>>>> localstorage
 }
-header a {
+
+a {
   font-family: OCR A Extended;
   font-style: normal;
   font-weight: normal;
@@ -41,7 +38,8 @@ header a {
   text-decoration: none;
   color: #000000;
 }
-header .cart {
+
+.cart {
   height: 32px;
   width: 32px;
   background: url(../img/cart.svg);
@@ -51,7 +49,8 @@ header .cart {
   position: relative;
   cursor: pointer;
 }
-header .cantidadcart {
+
+.cantidadcart {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 900;
   font-size: 11px;
@@ -61,7 +60,8 @@ header .cantidadcart {
   width: 11px;
   cursor: pointer;
 }
-header .circle {
+
+.circle {
   width: 8px;
   height: 8px;
   background-color: white;

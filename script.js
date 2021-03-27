@@ -75,14 +75,8 @@ function agregarAlCarrito(e){
         }) */
     }
     else{
-<<<<<<< HEAD
-        carrito = [...carrito,producto]
-    }
-=======
         carrito.push(producto)
     }
-
->>>>>>> localstorage
     
     escribirDatosCarrito(carrito)
     animacionButton(button)
