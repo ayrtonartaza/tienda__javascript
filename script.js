@@ -1,7 +1,26 @@
 const container = document.getElementById('container__cards');
 const carritovaciohtml = document.querySelector('.carritovacio');
 const body= document.querySelector('body');
-let carrito =[];
+const carritomain = document.querySelector('.carritomain');
+const carritohtml = document.getElementById('iconcarrito');
+const iconcarrito = document.querySelector('.cantidadcart');
+const circlecarrito = document.getElementById('circle')
+let botonescarrito = document.querySelector('.carritomain');
+
+calcularTotalUnidadesCarrito()
+function comprobarCarrito(){
+    if(localStorage.getItem('datos') === null){
+        carrito =[];
+    }
+    else{
+        carrito = JSON.parse(localStorage.getItem('datos'))
+    }
+    console.log(carrito)
+    return carrito;
+    
+}
+
+
 const datos=[
     skate1={
         img:'img/imgskate.png',
@@ -41,10 +60,11 @@ datos.forEach(item =>{
     `;
 })
 
+
+
 /* funcion agregar al carrito */
 container.addEventListener('click',agregarAlCarrito)
 function agregarAlCarrito(e){
-    
     const button =e.target;
     let nombre= button.parentElement.querySelector('.nombre').textContent;
     let precio= button.parentElement.querySelector('.precio').textContent;
@@ -57,15 +77,17 @@ function agregarAlCarrito(e){
         cantidad:cantidad
     } 
     
+    comprobarCarrito()
+
     /* some es para array de objeto y map para un array comun */
     const existe = carrito.some(i => i.nombre === producto.nombre);
-
-    
     if(existe){
         /* si la condicion se cumple busca lo que se repite y le suma la cantidad */
+        JSON.parse(localStorage.getItem('datos'))
         carrito.forEach(i =>{
             if(i.nombre === producto.nombre){
-                i.cantidad++;
+            i.cantidad++;
+            localStorage.setItem('datos',JSON.stringify(i.cantidad))
             }
         })
         /* carrito.map( i =>{
@@ -75,29 +97,31 @@ function agregarAlCarrito(e){
         }) */
     }
     else{
-        carrito.push(producto)
+        JSON.parse(localStorage.getItem('datos'))
+        carrito = [...carrito,producto]
     }
-    
+    localStorage.setItem('datos',JSON.stringify(carrito))
     escribirDatosCarrito(carrito)
     animacionButton(button)
     calcularTotalUnidadesCarrito(carrito)
 } 
 
-function calcularTotalUnidadesCarrito(carrito){
+
+
+function calcularTotalUnidadesCarrito(){
+    comprobarCarrito()
     let cantidadcarrito=0;
     for (let i = 0; i < carrito.length; i++) {
         cantidadcarrito+=carrito[i].cantidad;
+       
     }
-   
+
     animacionCarrito(cantidadcarrito);
+    escribirCantidadIconCarrito(cantidadcarrito)
 }
 
 
 /* animacion cuando se añade algo al carrito */
-
-const carritohtml = document.getElementById('iconcarrito');
-const iconcarrito = document.querySelector('.cantidadcart');
-const circlecarrito = document.getElementById('circle')
 function animacionCarrito(cantidadcarrito){
     /* backgroun cart */
     if(cantidadcarrito >= 1){
@@ -113,17 +137,24 @@ function animacionCarrito(cantidadcarrito){
         carritohtml.classList.add('cart');
     }
     
-    /* circle animacion */
-   
-     /* escribir cantidad en el icon carrito */
-     iconcarrito.textContent=cantidadcarrito;
-
+    
 }
+
+
+
+/* escribir cantidad icon carrito */
+function escribirCantidadIconCarrito(cantidadcarrito){
+    iconcarrito.textContent=cantidadcarrito;
+}
+
+
 
 /* animacion boton cart al hacer click*/
-function animacionButton(e){
+function animacionButton(){
     /* no esta hecha aun */
 }
+
+
 /* calcular totalcarrito */
 function calcularTotalCarrito(carrito){
     let totalcarrito =0;
@@ -134,9 +165,11 @@ function calcularTotalCarrito(carrito){
     return totalcarrito
 }
 
+
 /* escribir datos en carrito */
-const carritomain = document.querySelector('.carritomain');
-function escribirDatosCarrito(carrito){
+escribirDatosCarrito()
+function escribirDatosCarrito(){
+    comprobarCarrito()
     carritomain.innerHTML='';
    for (let i = 0; i < carrito.length; i++) {
        carritomain.innerHTML+=`
@@ -192,10 +225,10 @@ function escribirCarroVacio(){
 
 
 /* detactar botones y llamar funciones a partir del carrito*/
-let botonescarrito = document.querySelector('.carritomain');
 botonescarrito.addEventListener('click',funcionesBotonesCarrito);
    
 function funcionesBotonesCarrito(e){
+   
     if(e.target.classList.contains('eliminarproducto')){
         eliminarproducto(e);
     }
@@ -212,15 +245,18 @@ function funcionesBotonesCarrito(e){
 /* funciones eliminar producto del carrito */
 function eliminarproducto(e){
         for (let i = 0; i < carrito.length; i++) {
+            
             if(e.target.id == carrito[i].nombre){
                 carrito.splice(i,1);
+                localStorage.setItem('datos',JSON.stringify(carrito))
                 escribirDatosCarrito(carrito)
                 iconcarrito.textContent=carrito.length;
 
             }
         
-            
+           
         }  
+        
         escribirCarroVacio()
 }  
 
@@ -230,12 +266,14 @@ function bajarCantidadProducto(e){
    for (let i = 0; i < carrito.length; i++) {
        if(e.target.dataset.id == carrito[i].nombre && carrito[i].cantidad >0){
        carrito[i].cantidad--;
+       localStorage.setItem('datos',JSON.stringify(carrito))
        escribirDatosCarrito(carrito);
        
        } 
 
        if( carrito[i].cantidad ===0){
         carrito.splice(i,1);
+        localStorage.setItem('datos',JSON.stringify(carrito))
         escribirDatosCarrito(carrito);
         escribirCarroVacio()
         iconcarrito.textContent=carrito.length;
@@ -250,6 +288,7 @@ function subirCantidadProducto(e){
     for (let i = 0; i < carrito.length; i++) {
         if(e.target.dataset.id == carrito[i].nombre && carrito[i].cantidad >0){
         carrito[i].cantidad++;
+        localStorage.setItem('datos',JSON.stringify(carrito))
         escribirDatosCarrito(carrito);
         } 
     }
