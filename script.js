@@ -206,6 +206,7 @@ carritohtml.addEventListener('click',abrirCarrito);
 function abrirCarrito(){
     carritomain.classList.toggle('carritoabierto');
     body.classList.toggle('filtro')
+    escribirCarroVacio()
 }
 
 
@@ -253,8 +254,6 @@ function eliminarproducto(e){
                 iconcarrito.textContent=carrito.length;
 
             }
-        
-           
         }  
         
         escribirCarroVacio()
