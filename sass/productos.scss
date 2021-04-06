@@ -353,6 +353,46 @@
     bottom: 10px;
 }
 
+
+/* modal comprar cargando */
+@keyframes animacioncircle{
+    from {transform: rotate(0deg);}
+    to{transform: rotate(360deg); display: none;}
+}
+.cargando__compra{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    min-height: 1000px;
+    height: 100vh;
+    z-index: 9999999999;
+    background-color: white;
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-family: Noto Sans JP;
+    font-weight: 900;
+        span{
+            text-shadow: center;
+            font-size: 1.5rem;
+        }
+        .circle__cargando{
+            box-sizing: border-box;
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+            margin-top: 20px;
+            border: 15px solid rgb(224, 212, 212);
+            border-top: 15px solid red;
+            animation: animacioncircle 1s linear infinite;
+        }
+}
+
 @media screen and (min-width:400px){
     #container__cards{
         display: grid;

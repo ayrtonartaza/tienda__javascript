@@ -7,6 +7,16 @@ const iconcarrito = document.querySelector('.cantidadcart');
 const circlecarrito = document.getElementById('circle')
 let botonescarrito = document.querySelector('.carritomain');
 
+
+const divcarga = document.querySelector('.cargando__compra');
+
+
+/* window.addEventListener('load',cargandoPagina);
+
+function cargandoPagina(){
+}
+ */
+
 calcularTotalUnidadesCarrito()
 function comprobarCarrito(){
     if(localStorage.getItem('datos') === null){
@@ -169,6 +179,7 @@ function calcularTotalCarrito(carrito){
 /* escribir datos en carrito */
 escribirDatosCarrito()
 function escribirDatosCarrito(){
+    
     comprobarCarrito()
     carritomain.innerHTML='';
    for (let i = 0; i < carrito.length; i++) {
@@ -198,6 +209,8 @@ function escribirDatosCarrito(){
    <span class='totalcarrito'>$${calcularTotalCarrito(carrito)}</span>
    </div>
    <button class='button__comprar' >Continuar compra</button>`;
+   const buttoncomprar = document.querySelector('.button__comprar');
+   buttoncomprar.addEventListener('click',cargarCompra)
 }
 
 
@@ -229,7 +242,7 @@ function escribirCarroVacio(){
 botonescarrito.addEventListener('click',funcionesBotonesCarrito);
    
 function funcionesBotonesCarrito(e){
-   
+    
     if(e.target.classList.contains('eliminarproducto')){
         eliminarproducto(e);
     }
@@ -292,4 +305,17 @@ function subirCantidadProducto(e){
         } 
     }
  }  
+
+
+
+
+
+function cargarCompra(){
+    body.classList.toggle('filtro');
+    divcarga.style.display = 'flex';
+    setTimeout(cargaCompraLista,2000)
+}
+function cargaCompraLista(){
+    window.location="comprahecha.html";
+}
 
