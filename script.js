@@ -49,6 +49,12 @@ const datos=[
         nombre:'Gorra Hombre Racks Mujer Visera Skate Surf',
         precio:60,
         id:3
+    },
+    skate__calavera={
+        img:'img/skate__calavera.jpg',
+        nombre:'Skate Completo Calavera Maple',
+        precio:90,
+        id:4
     }
 
 ]

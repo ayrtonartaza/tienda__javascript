@@ -755,7 +755,7 @@ main .button {
 @media screen and (min-width: 600px) {
   #container__cards {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px 200px;
     gap: 12px;
     margin: 20px 0px auto 14px;
     justify-content: center;
