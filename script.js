@@ -6,16 +6,8 @@ const carritohtml = document.getElementById('iconcarrito');
 const iconcarrito = document.querySelector('.cantidadcart');
 const circlecarrito = document.getElementById('circle')
 let botonescarrito = document.querySelector('.carritomain');
-
-
 const divcarga = document.querySelector('.cargando__compra');
 
-
-/* window.addEventListener('load',cargandoPagina);
-
-function cargandoPagina(){
-}
- */
 
 calcularTotalUnidadesCarrito()
 function comprobarCarrito(){
@@ -29,52 +21,33 @@ function comprobarCarrito(){
     return carrito;
     
 }
+document.addEventListener('DOMContentLoaded',obtenerjson)
+function obtenerjson(){
+    const url = 'productos.json'
+    fetch(url)
+        .then(resultado => resultado.json())
+        .then(datos=> escribirDatosJson(datos))
+        .catch(error =>console.log('no se ha podido mostrar la informacion')) 
+}
 
-
-const datos=[
-    skate1={
-        img:'img/imgskate.png',
-        nombre:'Tabla De Skate No Name Face Kid Regular Maple',
-        precio:100,
-        id:1
-    },
-    zapatillas={
-        img:'img/zapas2.jpg',
-        nombre:'Zapatilla Urbana Cuero Descarne Skate Gris',
-        precio:50,
-        id:2
-    },
-    gorro={
-        img:'img/gorro__skate.jpg',
-        nombre:'Gorra Hombre Racks Mujer Visera Skate Surf',
-        precio:60,
-        id:3
-    },
-    skate__calavera={
-        img:'img/skate__calavera.jpg',
-        nombre:'Skate Completo Calavera Maple',
-        precio:90,
-        id:4
-    }
-
-]
-
-
-datos.forEach(item =>{
-    container.innerHTML+=`
-    <div class="card container">
-           <img src="${item.img}" class="img_card" alt="">
-           <div class="infocard " >
-                <div class="containerprecio">
-                    <p class='preciocard'>$</p>
-                    <span class='precio preciocard'>${item.precio}</span>
-                </div>
-               <h3 class='nombre'>${item.nombre}</h3>
-               <button >Agregar al carrito</button>
+function escribirDatosJson(datos){
+    datos.forEach(item =>{
+        container.innerHTML+=`
+        <div class="card container">
+               <img src="${item.img}" class="img_card" alt="">
+               <div class="infocard " >
+                    <div class="containerprecio">
+                        <p class='preciocard'>$</p>
+                        <span class='precio preciocard'>${item.precio}</span>
+                    </div>
+                   <h3 class='nombre'>${item.nombre}</h3>
+                   <button >Agregar al carrito</button>
+               </div>
            </div>
-       </div>
-    `;
-})
+        `;
+    })
+}
+
 
 
 
@@ -93,10 +66,10 @@ function agregarAlCarrito(e){
         cantidad:cantidad
     } 
     
-    comprobarCarrito()
+comprobarCarrito()
 
-    /* some es para array de objeto y map para un array comun */
-    const existe = carrito.some(i => i.nombre === producto.nombre);
+/* some es para array de objeto y map para un array comun */
+const existe = carrito.some(i => i.nombre === producto.nombre);
     if(existe){
         /* si la condicion se cumple busca lo que se repite y le suma la cantidad */
         JSON.parse(localStorage.getItem('datos'))
@@ -185,7 +158,6 @@ function calcularTotalCarrito(carrito){
 /* escribir datos en carrito */
 escribirDatosCarrito()
 function escribirDatosCarrito(){
-    
     comprobarCarrito()
     carritomain.innerHTML='';
    for (let i = 0; i < carrito.length; i++) {
@@ -240,13 +212,12 @@ function escribirCarroVacio(){
         <a class="button" href="productos.html">Explorar</a>
         </div>`
         animacionCarrito() 
-    }
+        }
     }
 
 
 /* detactar botones y llamar funciones a partir del carrito*/
-botonescarrito.addEventListener('click',funcionesBotonesCarrito);
-   
+botonescarrito.addEventListener('click',funcionesBotonesCarrito); 
 function funcionesBotonesCarrito(e){
     
     if(e.target.classList.contains('eliminarproducto')){

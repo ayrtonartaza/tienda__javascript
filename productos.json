@@ -1,0 +1,24 @@
+[{
+    "img":"img/imgskate.png",
+    "nombre":"Tabla De Skate No Name Face Kid Regular Maple",
+    "precio":100,
+    "id":1
+},
+{
+    "img":"img/zapas2.jpg",
+    "nombre":"Zapatilla Urbana Cuero Descarne Skate Gris",
+    "precio":50,
+    "id":2
+},
+{
+    "img":"img/gorro__skate.jpg",
+    "nombre":"Gorra Hombre Racks Mujer Visera Skate Surf",
+    "precio":60,
+    "id":3
+},
+{
+    "img":"img/skate__calavera.jpg",
+    "nombre":"Skate Completo Calavera Maple",
+    "precio":90,
+    "id":4
+}]

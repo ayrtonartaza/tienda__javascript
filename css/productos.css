@@ -387,7 +387,7 @@ main .button {
   padding: 20px 22px;
   opacity: 0;
   transition: 0.3s;
-  z-index: 10000000000;
+  z-index: 100000000000000;
 }
 
 .carritoabierto {
