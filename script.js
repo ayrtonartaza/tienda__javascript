@@ -8,7 +8,7 @@ const circlecarrito = document.getElementById('circle')
 let botonescarrito = document.querySelector('.carritomain');
 const divcarga = document.querySelector('.cargando__compra');
 
-
+let carrito;
 calcularTotalUnidadesCarrito()
 function comprobarCarrito(){
     if(localStorage.getItem('datos') === null){
@@ -17,10 +17,11 @@ function comprobarCarrito(){
     else{
         carrito = JSON.parse(localStorage.getItem('datos'))
     }
-    console.log(carrito)
+   
     return carrito;
     
 }
+
 document.addEventListener('DOMContentLoaded',obtenerjson)
 function obtenerjson(){
     const url = 'productos.json'
@@ -151,6 +152,7 @@ function calcularTotalCarrito(carrito){
         totalcarrito+=carrito[i].precio * carrito[i].cantidad;
        
     }
+    console.log(totalcarrito)
     return totalcarrito
 }
 

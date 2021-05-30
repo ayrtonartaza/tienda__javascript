@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/productos.css">
-</head>
-<body>
-    
-    <h2>Checkout</h2>
-    <p> Si esta fuera una pagina "real" aca iria un checkout con tarjetas y demases</p>
-    <a href="index.html" class="button">Volver al inicio</a>
-</body>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/resumencompra.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">ak8</a>
+    </header>
+
+    <div id="resumen--compra">
+      <h3>Resumen de compra</h3>
+      <div id="productos"></div>
+      <span id="totalglobal"
+        >Total a pagar : <span id="totalcompranumero"></span>
+        pesos
+      </span>
+      <button>Pagar con mercadopago</button>
+    </div>
+
+    <script src="carritocompra.js" type="module"></script>
+  </body>
 </html>

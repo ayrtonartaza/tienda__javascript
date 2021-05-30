@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background-color: #E5E9D3;
+  background-color: #e5e9d3;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -11,7 +11,8 @@ body {
 
 @font-face {
   font-family: "OCR A Extended";
-  src: url("../OCRAExtended.woff2") format("woff2"), url("../OCRAExtended.woff") format("woff");
+  src: url("../OCRAExtended.woff2") format("woff2"),
+    url("../OCRAExtended.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,7 +20,7 @@ body {
 header {
   height: 60px;
   max-width: 100%;
-  background-color: #FEFFFB;
+  background-color: #fefffb;
   padding: 0px 20px;
   display: flex;
   align-items: center;
@@ -91,7 +92,7 @@ main #hero__section {
 main h2 {
   font-weight: 500;
   font-size: 2rem;
-  color: #FDFFF0;
+  color: #fdfff0;
   display: flex;
   align-self: flex-start;
   margin-bottom: 14px;
@@ -100,14 +101,14 @@ main p {
   font-weight: 500;
   font-size: 0.9rem;
   line-height: 20px;
-  color: #D4DCB9;
+  color: #d4dcb9;
   font-weight: 400;
   width: 271px;
   margin-bottom: 20px;
 }
 main .button {
-  background-color: #0F1201;
-  color: #EAECE3;
+  background-color: #0f1201;
+  color: #eaece3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,8 +208,8 @@ main .button {
     width: 500px;
   }
   main .button {
-    background-color: #0F1201;
-    color: #EAECE3;
+    background-color: #0f1201;
+    color: #eaece3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -241,8 +242,8 @@ main .button {
     width: 500px;
   }
   main .button {
-    background-color: #0F1201;
-    color: #EAECE3;
+    background-color: #0f1201;
+    color: #eaece3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -274,7 +275,7 @@ main .button {
 .card {
   height: 200px;
   min-width: 100%;
-  background: #FEFFFB;
+  background: #fefffb;
   border-radius: 2px;
   display: flex;
   flex-flow: column;
@@ -315,10 +316,10 @@ main .button {
   font-weight: 700;
   font-size: 1rem;
   line-height: 29px;
-  color: #31430C;
+  color: #31430c;
 }
 .card .infocard .containerprecio .preciocard::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 .card .infocard h3 {
@@ -334,7 +335,7 @@ main .button {
   padding-right: 12px;
 }
 .card .infocard h3::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 .card button {
@@ -342,7 +343,7 @@ main .button {
   color: #181916;
   border: solid 1.34px #181916;
   border-radius: 2px;
-  background-color: #FEFFFB;
+  background-color: #fefffb;
   font-family: Noto Sans JP;
   font-style: normal;
   font-weight: 600;
@@ -412,7 +413,7 @@ main .button {
   margin-bottom: 32px;
 }
 .carritovacio h2::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 .carritovacio span {
@@ -422,7 +423,7 @@ main .button {
   line-height: 20px;
 }
 .carritovacio span::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 .carritovacio .button {
@@ -466,13 +467,13 @@ main .button {
   font-weight: 700;
   font-size: 0.8rem;
   line-height: 29px;
-  color: #31430C;
+  color: #31430c;
   position: absolute;
   top: 0px;
   margin-top: 32px;
 }
 .totalproducto::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 
@@ -489,17 +490,17 @@ main .button {
   width: 200px;
 }
 .nombre__carrito::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 
 .cantidadproducto {
   font-weight: 700;
   font-family: "Noto Sans JP", sans-serif;
-  color: #31430C;
+  color: #31430c;
 }
 .cantidadproducto::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 
@@ -548,7 +549,7 @@ main .button {
   color: #464040;
 }
 .totalcarritocontainer span::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 .totalcarritocontainer .totalcarrito {
@@ -556,10 +557,10 @@ main .button {
   font-weight: bold;
   font-size: 20px;
   line-height: 29px;
-  color: #31430C;
+  color: #31430c;
 }
 .totalcarritocontainer .totalcarrito::selection {
-  background-color: #31430C;
+  background-color: #31430c;
   color: white;
 }
 
@@ -582,7 +583,7 @@ main .button {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -595,7 +596,7 @@ main .button {
     background-color: #181916;
   }
   100% {
-    background-color: #FEFFFB;
+    background-color: #fefffb;
   }
 }
 .buttonanimado {
@@ -605,7 +606,7 @@ main .button {
   color: #181916;
   border: solid 1.34px #181916;
   border-radius: 2px;
-  background-color: #FEFFFB;
+  background-color: #fefffb;
   font-family: Noto Sans JP;
   font-style: normal;
   font-weight: 600;
@@ -677,7 +678,7 @@ main .button {
   .card {
     height: 290px;
     max-width: 300px;
-    background: #FEFFFB;
+    background: #fefffb;
     border-radius: 2px;
     display: flex;
     flex-flow: column;
@@ -719,7 +720,7 @@ main .button {
     font-weight: 700;
     font-size: 1.3rem;
     line-height: 29px;
-    color: #31430C;
+    color: #31430c;
   }
   .card .infocard h3 {
     font-family: "Noto Sans JP", sans-serif;
@@ -737,7 +738,7 @@ main .button {
     color: #181916;
     border: solid 1.34px #181916;
     border-radius: 2px;
-    background-color: #FEFFFB;
+    background-color: #fefffb;
     font-family: Noto Sans JP;
     font-style: normal;
     font-weight: 600;
